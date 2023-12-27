@@ -11,8 +11,10 @@ const errorHandler = require("./middleware/error-handler");
 
 //Routes
 
+const products = require("./products.json");
+
 app.get("/", (req, res) => {
-  res.send("Store Api");
+  res.status(200).json({ products });
 });
 
 app.use(morgan("dev"));
